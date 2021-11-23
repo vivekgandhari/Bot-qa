@@ -1,1 +1,2 @@
-$ heroku ps:scale web=1
+web: gunicorn hellodjango.wsgi
+heroku ps:scale web=1
