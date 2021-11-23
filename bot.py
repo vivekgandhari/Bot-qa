@@ -4,9 +4,9 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
-    querry = input("Please input your question: ")
-    print("The code is yet to be updated to answer your question: "+querry+"\n"+"Thank you")
+def start():
+#     querry = input("Please input your question: ")
+    print("The code is yet to be updated to answer your question: "+"\n"+"Thank you")
     return "Working"
 
 if __name__ == "__main__":
