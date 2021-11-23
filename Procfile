@@ -1,2 +1,2 @@
-web: gunicorn hellodjango.wsgi
+web: python bot.py
 heroku ps:scale web=1
