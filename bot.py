@@ -8,7 +8,7 @@ def start():
     querry = ""
     while(querry!="exit"):
         querry = input("Please input your question: ")
-        print("The code is yet to be updated to answer your question: "+querry"+"\n"+"Thank you")
+        print("The code is yet to be updated to answer your question: "+querry+"\n"+"Thank you")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
