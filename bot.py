@@ -6,7 +6,7 @@ import pandas  as pd
 import pickle
 import warnings
 import argparse
-from extract_answer import get_answer
+# from extract_answer import get_answer
 
 warnings.filterwarnings("ignore")
 
