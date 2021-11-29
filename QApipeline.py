@@ -1,26 +1,30 @@
 import math
+import torch
+from transformers import BertForQuestionAnswering
+from transformers import BertTokenizer
+import sentencepiece
 
 max_answer_length = 20
 
 def QApipeline(question,paragraph,model,tokenizer):
   encoding = tokenizer.encode_plus(text=question,text_pair=paragraph)
-  inputs = encoding['input_ids']  
+  inputs = encoding['input_ids']
   sentence_embedding = encoding['token_type_ids']
-  tokens = tokenizer.convert_ids_to_tokens(inputs) 
-  output = model(input_ids=torch.tensor([inputs]),token_type_ids=torch.tensor([sentence_embedding])) 
-  start_scores = output['start_logits'] 
+  tokens = tokenizer.convert_ids_to_tokens(inputs)
+  output = model(input_ids=torch.tensor([inputs]),token_type_ids=torch.tensor([sentence_embedding]))
+  start_scores = output['start_logits']
   end_scores = output['end_logits']
   skip = tokens.index('[SEP]')
   start_index,end_index,confidence = span_calculator(skip,start_scores,end_scores)
   answer = ' '.join(tokens[start_index:end_index+1])
   corrected_answer = ''
-  for word in answer.split():  
+  for word in answer.split():
     if word[0:2] == '##':
         corrected_answer += word[2:]
     else:
         corrected_answer += ' ' + word
   return corrected_answer, confidence
- 
+
 
 def span_calculator(skip,start_logits,end_logits):
   score_check = float('-inf');
