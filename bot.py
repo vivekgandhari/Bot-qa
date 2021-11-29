@@ -23,7 +23,7 @@ def main():
     
 def next_question():
    querry = input("Question:")
-   put_text(extract_answer(querry))
+#    put_text(extract_answer(querry))
    put_button("Try another question",onclick=main)
 
 if __name__ == '__main__':
