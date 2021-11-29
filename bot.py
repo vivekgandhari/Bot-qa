@@ -10,20 +10,6 @@ from extract_answer import *
 
 warnings.filterwarnings("ignore")
 
-# with open('./pickledFiles/random_forest_model.pkl', 'rb') as f:
-#    random_forest_model = pickle.load(f)
-
-# with open('./pickledFiles/columns.pkl', 'rb') as f:
-#    model_columns = pickle.load(f)
-
-# def prediction(prediction_df):
-#     query_ = pd.get_dummies(pd.DataFrame(prediction_df, index = [0]), prefix=['Sector','job_sim'], columns=['Sector','job_sim'])
-#     query = query_.reindex(columns = model_columns, fill_value= 0)
-#     result = list(random_forest_model.predict(query))
-#     final_result = round(result[0], 3)
-
-#     return final_result
-
 def main():
     put_markdown(
         '''
