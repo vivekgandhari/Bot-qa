@@ -7,7 +7,7 @@ from filter_paragraphs import *
 from QApipeline import *
 
 
-def extract_answer(question):
+def get_answer(question):
   model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
   tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
 
