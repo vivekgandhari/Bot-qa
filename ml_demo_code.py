@@ -26,11 +26,12 @@ def prediction(prediction_df):
 def main():
     put_markdown(
         '''
-        # Salary Prediction Web App (`Using PyWebIO`)
+        # FAWBOT demo
         '''
         , lstrip=True
     )
-
+    querry = input("Question:")
+    
     model_inputs = input_group(
         "Enter the following information",
         [
