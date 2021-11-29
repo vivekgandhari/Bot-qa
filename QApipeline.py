@@ -6,7 +6,7 @@ import sentencepiece
 
 max_answer_length = 20
 
-def QApipeline(question,paragraph,model,tokenizer):
+def pipeline(question,paragraph,model,tokenizer):
   encoding = tokenizer.encode_plus(text=question,text_pair=paragraph)
   inputs = encoding['input_ids']
   sentence_embedding = encoding['token_type_ids']
