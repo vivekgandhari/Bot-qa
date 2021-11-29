@@ -1,7 +1,7 @@
 import pickle
 import torch
-# from transformers import BertForQuestionAnswering
-# from transformers import BertTokenizer
+from transformers import BertForQuestionAnswering
+from transformers import BertTokenizer
 import sentencepiece
 # from filter_paragraphs import filter_paras
 # from QApipeline import pipeline
