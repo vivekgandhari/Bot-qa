@@ -7,7 +7,6 @@ import pickle
 import warnings
 import argparse
 from extract_answer import get_answer
-import time
 
 warnings.filterwarnings("ignore")
 
@@ -34,7 +33,6 @@ def main():
     )
     querry = input("Question: ")
     answer = get_answer(querry)
-    time.sleep(180)
     put_text(answer)
 #     put_text(get_answer(querry))
 
