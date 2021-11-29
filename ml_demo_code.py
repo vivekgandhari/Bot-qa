@@ -6,6 +6,7 @@ import pandas  as pd
 import pickle
 import warnings
 import argparse
+import extract_answer.py
 
 warnings.filterwarnings("ignore")
 
@@ -31,6 +32,7 @@ def main():
         , lstrip=True
     )
     querry = input("Question:")
+    put_text(extract_answer(querry))
     
     model_inputs = input_group(
         "Enter the following information",
