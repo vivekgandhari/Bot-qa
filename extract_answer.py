@@ -3,8 +3,8 @@ import torch
 from transformers import BertForQuestionAnswering
 from transformers import BertTokenizer
 import sentencepiece
-# from filter_paragraphs import filter_paras
-# from QApipeline import pipeline
+from filter_paragraphs import filter_paras
+from QApipeline import pipeline
 
 
 def get_answer(question):
