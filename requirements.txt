@@ -2,7 +2,7 @@ pywebio
 numpy
 sklearn
 argparse
-pytorch-cpu
+torch==1.10.0+cpu
 transformers
 sentencepiece
 scipy
