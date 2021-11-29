@@ -2,7 +2,7 @@ pywebio
 numpy
 sklearn
 argparse
-https://download.pytorch.org/whl/cpu/torch-1.10.0-cp39-cp39-manylinux2014_aarch64.whl
+https://download.pytorch.org/whl/cpu/torch-1.10.0-cp39-none-macosx_10_9_x86_64.whl
 transformers
 sentencepiece
 scipy
