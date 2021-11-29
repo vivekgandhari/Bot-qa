@@ -27,12 +27,12 @@ warnings.filterwarnings("ignore")
 def main():
     put_markdown(
         '''
-        # Salary Prediction Web App (`Using PyWebIO`)
+        # FAWBOT demo
         '''
         , lstrip=True
     )
     querry = input("Question: ")
-    put_text("hey")
+    put_text(extract_answer(querry))
 #     put_text(extract_answer(querry))
 
 #     model_inputs = input_group(
