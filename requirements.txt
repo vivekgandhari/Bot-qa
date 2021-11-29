@@ -7,3 +7,4 @@ pickle
 torch
 transformers
 sentencepiece
+scipy
