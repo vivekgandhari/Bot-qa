@@ -32,7 +32,8 @@ def main():
         , lstrip=True
     )
     querry = input("Question: ")
-    put_text(extract_answer(querry))
+    put_text("hey")
+#     put_text(extract_answer(querry))
 
 #     model_inputs = input_group(
 #         "Enter the following information",
