@@ -32,4 +32,4 @@ def bmi():
 
 
 if __name__ == '__main__':
-    pywebio.start_server(bmi,port=80)
+    bmi()
