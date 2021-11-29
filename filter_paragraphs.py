@@ -35,7 +35,7 @@ class BM25(object):
         return (numer / denom).sum(1).A1
       
       
-def filter_paragraphs(paragraphs,question,n_best_paragraphs):
+def filter_paras(paragraphs,question,n_best_paragraphs):
   bm25 = BM25()
   bm25.fit(paragraphs)
   scores = list(bm25.transform(question, paragraphs))
