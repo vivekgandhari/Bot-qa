@@ -3,8 +3,8 @@ import torch
 from transformers import BertForQuestionAnswering
 from transformers import BertTokenizer
 import sentencepiece
-from filter_paragraphs import *
-from QApipeline import *
+from filter_paragraphs import filter_paras
+from QApipeline import pipeline
 
 
 def get_answer(question):
@@ -14,7 +14,7 @@ def get_answer(question):
   with open("paragraphs.txt","rb") as f:
     paragraphs = pickle.load(f)
 
-  best_paragraphs = filter_paragraphs(paragraphs,question,10)
+  best_paragraphs = filter_paras(paragraphs,question,10)
 
   n_best = 3
   score = float('-inf')
