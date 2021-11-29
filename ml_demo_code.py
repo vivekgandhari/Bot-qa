@@ -33,7 +33,8 @@ def main():
     )
     querry = input("Question:")
     put_text(extract_answer(querry))
-      
+    put_button("Try another question",onclick=main)
+    
     
 #     model_inputs = input_group(
 #         "Enter the following information",
