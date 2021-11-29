@@ -1,1 +1,1 @@
-web: python bot.py --port=$PORT
+web: python ml_demo_code.py --port=$PORT
