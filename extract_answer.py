@@ -24,7 +24,7 @@ def extract_answer(question):
   elements_number = []
   for element in best_paragraphs:
     try:
-      possible_answer,check_score  = QApipeline(question,element,model,tokenizer)
+      possible_answer,check_score  = pipeline(question,element,model,tokenizer)
       if(len(answers_group)<n_best):
         for k in range(len(answers_group)-1,-2,-1):
           if((k==-1) or (score_group[k]>check_score)):
