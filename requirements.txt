@@ -2,7 +2,7 @@ pywebio
 numpy
 sklearn
 argparse
-torch-cpu
+pytorch-cpu
 transformers
 sentencepiece
 scipy
