@@ -3,13 +3,18 @@ from flask import Flask,requests
 
 app = Flask(__name__)
 
-@app.route("/")
-def start():
-    querry = requests.args['name']
-    return "Working "+querry
-
-
-
+@app.route('/form')
+def form():
+    return render_template('form.html')
+ 
+@app.route('/data/', methods = ['POST', 'GET'])
+def data():
+    if request.method == 'GET':
+        return f"The URL /data is accessed directly. Try going to '/form' to submit form"
+    if request.method == 'POST':
+        form_data = request.form
+        return render_template('data.html',form_data = form_data)
+ 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
