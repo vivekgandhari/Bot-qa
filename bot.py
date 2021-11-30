@@ -13,6 +13,8 @@ from transformers import BertTokenizer
 import sentencepiece
 
 warnings.filterwarnings("ignore")
+model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
 
 # with open('./pickledFiles/random_forest_model.pkl', 'rb') as f:
 #    random_forest_model = pickle.load(f)
@@ -35,8 +37,8 @@ def main():
         '''
         , lstrip=True
     )
-    model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-    tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#     model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#     tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
     querry = input("Question: ")
     answer = get_answer(querry,model,tokenizer)
     put_text("hey")
