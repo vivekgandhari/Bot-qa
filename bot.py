@@ -7,6 +7,10 @@ import pickle
 import warnings
 import argparse
 from extract_answer import get_answer
+import torch
+from transformers import BertForQuestionAnswering
+from transformers import BertTokenizer
+import sentencepiece
 
 warnings.filterwarnings("ignore")
 
@@ -31,8 +35,11 @@ def main():
         '''
         , lstrip=True
     )
+    model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+    tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
     querry = input("Question: ")
-    answer = get_answer(querry)
+    answer = get_answer(querry,model,tokenizer)
+    put_text("hey")
     put_text(answer)
 #     put_text(get_answer(querry))
 
