@@ -7,9 +7,9 @@ from filter_paragraphs import filter_paras
 from QApipeline import pipeline
 
 
-def get_answer(question):
-  model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-  tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+def get_answer(question,model,tokenizer):
+#   model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#   tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
 
   with open("paragraphs.txt","rb") as f:
     paragraphs = pickle.load(f)
