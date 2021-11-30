@@ -14,10 +14,10 @@ import sentencepiece
 
 warnings.filterwarnings("ignore")
 
-def main():
-    model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-    tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-    process(model,tokenizer)
+# def main():
+#     model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#     tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#     process(model,tokenizer)
 
 # with open('./pickledFiles/random_forest_model.pkl', 'rb') as f:
 #    random_forest_model = pickle.load(f)
@@ -33,7 +33,7 @@ def main():
 
 #     return final_result
 
-def process(model,tokenizer):
+def main(model,tokenizer):
     put_markdown(
         '''
         # FAWBOT demo
@@ -43,6 +43,8 @@ def process(model,tokenizer):
 #     model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
 #     tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
     querry = input("Question: ")
+    model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+    tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
     answer = get_answer(querry,model,tokenizer)
     put_text("hey")
     put_text(answer)
