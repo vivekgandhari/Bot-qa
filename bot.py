@@ -33,6 +33,9 @@ warnings.filterwarnings("ignore")
 
 #     return final_result
 
+def demo(querry):
+    return "trying to answer : " +querry 
+
 def main(model,tokenizer):
     put_markdown(
         '''
@@ -43,11 +46,10 @@ def main(model,tokenizer):
 #     model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
 #     tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
     querry = input("Question: ")
-    model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-    tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-    answer = get_answer(querry,model,tokenizer)
-    put_text("hey")
-    put_text(answer)
+#     model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#     tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#     answer = get_answer(querry,model,tokenizer)
+    put_text(demo(querry))
 #     put_text(get_answer(querry))
 
 #     model_inputs = input_group(
