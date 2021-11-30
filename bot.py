@@ -13,8 +13,11 @@ from transformers import BertTokenizer
 import sentencepiece
 
 warnings.filterwarnings("ignore")
-model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+
+def main():
+    model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+    tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+    process(model,tokenizer)
 
 # with open('./pickledFiles/random_forest_model.pkl', 'rb') as f:
 #    random_forest_model = pickle.load(f)
@@ -30,7 +33,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking
 
 #     return final_result
 
-def main():
+def process(model,tokenizer):
     put_markdown(
         '''
         # FAWBOT demo
